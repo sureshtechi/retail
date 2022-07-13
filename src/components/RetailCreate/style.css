@@ -1,0 +1,164 @@
+.getdata{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    max-width: 420px;
+    margin: 30px auto;
+    margin-left: 10%;
+    background: white;
+    text-align: left;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.image_upload_style{
+  width: 70%;
+}
+
+.input{
+    display: block;
+    padding: 10px 6px;
+    width: 50%;
+    margin: auto;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+  }
+
+  select{
+    display: block;
+    padding: 10px 6px;
+    width: 50%;
+    margin: auto;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+  }
+
+  .form_button{
+    background: #0b6dff;
+    border: 0;
+    padding: 10px 20px;
+    margin-top: 20px;
+    color: white;
+    border-radius: 20px;
+  }
+
+  .form_button:hover{
+      cursor: pointer;
+  }
+
+  .min_btn{
+    background: #16df7e;
+    border: 0;
+    padding: 17px 15px;
+    margin-top: 20px;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    margin-left: 5%;
+    margin-bottom: 5%;
+  }
+
+  .min_btn:hover{
+      cursor: pointer;
+  }
+
+  .slt_e-comm{
+    display: flex  ; 
+    flex-direction: column;
+    
+  }
+
+  .align_chbox_lbl label {
+    display: block;
+    
+  }
+
+  .align_chbox_lbl input {
+    vertical-align: middle;
+    width: 5%;
+  }
+  .align_chbox_lbl label {
+    vertical-align: middle;
+  }
+
+.machine_css{
+  font-size: 1.1em;
+   }
+
+.label {
+    color: rgb(27, 27, 27);
+    display: inline-block;
+    margin: 25px 0 15px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+.lbl_ipt{
+    display: flex;
+    flex-direction: row;
+    align-items: center;  
+}
+
+.form_btn{
+    display: flex;
+    justify-content: center;
+}
+
+.heading{
+    font-size: 1.1em;
+    display: flex;
+    justify-content: center;
+    color: rgb(27, 27, 27);
+    display: inline-block;
+    margin: 25px 0 15px;
+    text-transform: capitalize; 
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.display_students{
+    display: flex;
+    flex-direction:column;
+    overflow:visible;
+}
+
+.single_student{
+    width: 50%;
+    margin-left: 20%;
+    margin-top: 5%;
+
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-radius: 25px;
+    background-color: #e3f2fd;
+
+}
+
+.update_mark_form{
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.contact_font{
+  font-size: 0.85em;
+}
+
+.error_display{
+  color: red;
+  font-size: 1em;
+}
+
+.green{
+  color: rgb(0, 255, 89);
+  font-size: 1em;
+}

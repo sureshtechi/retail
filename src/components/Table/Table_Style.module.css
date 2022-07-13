@@ -1,0 +1,26 @@
+    #table_css {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
+    border-collapse:separate;
+        border-radius:6px;
+    width: 100%;
+    }
+
+    #table_css td, #table_css th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    }
+
+    #table_css tr:hover {background-color: #e3f2fd;}
+
+    #table_css th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color:#5893ff ;
+    color: white;
+    border-radius: 7px;
+    }
+
+    #table_css td {
+    border-radius: 7px;
+    }
