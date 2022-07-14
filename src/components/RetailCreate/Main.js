@@ -339,7 +339,7 @@ function Main() {
   return (
     <div>
       <form className="getdata" onSubmit={handlesubmit}>
-        <span className="heading">Enter Retail Information</span>
+        <span className="heading">Enter Retail Info</span>
 
         <div className="lbl_ipt">
           <label className="label">Name*</label>
