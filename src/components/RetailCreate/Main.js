@@ -294,6 +294,7 @@ function Main() {
               };
               db.add("details", indexeddb_data_sync_false).then((res) => {
                 console.log(res);
+                console.log("--");
               });
               seterror(
                 "There is a Network Error, Retail Information SAVED, Data will be validated once the Network is back"
