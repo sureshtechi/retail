@@ -306,9 +306,9 @@ function Main() {
 
               // await window.ReactNativeWebView.postMessage('Data from WebView / Website');
 
-              setTimeout(()=> {
-                window.ReactNativeWebView.postMessage("Hello!")
-              }, 2000);
+              // setTimeout(()=> {
+               await window.ReactNativeWebView.postMessage("Hello!");
+              // }, 2000);
 
               // await navigator.ReactNativeWebView.postMessage('Data from WebView / Website') ;
 
