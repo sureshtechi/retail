@@ -305,7 +305,7 @@ function Main() {
               await registration.sync.register(email);
 
               await window.ReactNativeWebView.postMessage('Data from WebView / Website');
-              await navigator.ReactNativeWebView.postMessage('Data from WebView / Website') ;
+              // await navigator.ReactNativeWebView.postMessage('Data from WebView / Website') ;
 
               //   navigator.serviceWorker.ready(serviceWorkerRegistration => {
               //     serviceWorkerRegistration.sync.register('some-unique-tag');
