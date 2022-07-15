@@ -301,13 +301,13 @@ function Main() {
               );
               setsubmitted(true);
 
-              const registration = await navigator.serviceWorker.ready;
-              await registration.sync.register(email);
+              // const registration = await navigator.serviceWorker.ready;
+              // await registration.sync.register(email);
 
               // await window.ReactNativeWebView.postMessage('Data from WebView / Website');
 
               // setTimeout(()=> {
-               await window.ReactNativeWebView.postMessage("Hello!");
+                window.ReactNativeWebView.postMessage(JSON.stringify({ message: "your message" , data: "your data"}));
               // }, 2000);
 
               // await navigator.ReactNativeWebView.postMessage('Data from WebView / Website') ;
