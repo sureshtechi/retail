@@ -38,6 +38,7 @@ function Main() {
   const [live_capture_size, setlive_capture_size] = useState();
 
   useEffect(() => {
+    window.ReactNativeWebView.postMessage(JSON.stringify({ message: "your message" , data: "your data"}));
     openDB("retail", 1, {
       upgrade(db) {
         db.createObjectStore("details", { keyPath: "email" });
@@ -153,6 +154,7 @@ function Main() {
   // }, [] );
 
   const HandleLiveCapture = (image) => {
+    window.ReactNativeWebView.postMessage(JSON.stringify({ message: "your message" , data: "your data"}));
     setlive_capture(image);
     setimage_upload();
     console.log(image);
@@ -165,6 +167,7 @@ function Main() {
   };
 
   const getlatlog = async (lat, long) => {
+    window.ReactNativeWebView.postMessage(JSON.stringify({ message: "your message" , data: "your data"}));
     setlatitude(lat);
     setlongitude(long);
     setlocated(latitude && longitude ? true : false);
