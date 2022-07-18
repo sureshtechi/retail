@@ -5,6 +5,7 @@ import { openDB, deleteDB, wrap, unwrap } from "idb";
 import "./style.css";
 import GoogleMaps from "../Maps/GoogleMaps";
 import CameraModule from "../Camera/CameraModule";
+import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
 
 function Main() {
   const [name, setname] = useState("");
@@ -37,13 +38,21 @@ function Main() {
   const [image_upload_size, setimage_upload_size] = useState();
   const [live_capture_size, setlive_capture_size] = useState();
 
+  const [checkexpo, setcheckexpo] = useState("NOT LOADED");
+
   useEffect(() => {
-    window.ReactNativeWebView.postMessage(JSON.stringify({ message: "your message" , data: "your data"}));
+    if(isMobile)
+    {
+      window.ReactNativeWebView.postMessage(JSON.stringify({ message: "your message" , data: "your data"}));
+    }
     openDB("retail", 1, {
       upgrade(db) {
         db.createObjectStore("details", { keyPath: "email" });
       },
     });
+    window.onload = (event) => {
+      setcheckexpo("PAGE LOADED");
+    }
   }, []);
 
   // useEffect( () => {
@@ -154,7 +163,15 @@ function Main() {
   // }, [] );
 
   const HandleLiveCapture = (image) => {
-    window.ReactNativeWebView.postMessage(JSON.stringify({ message: "your message" , data: "your data"}));
+    
+    if(isMobile)
+    {
+      window.ReactNativeWebView.postMessage(JSON.stringify({ message: "your message" , data: "your data"}));
+    }
+    window.onload = (event) => {
+      setcheckexpo("PAGE LOADED");
+    }
+
     setlive_capture(image);
     setimage_upload();
     console.log(image);
@@ -167,7 +184,10 @@ function Main() {
   };
 
   const getlatlog = async (lat, long) => {
-    window.ReactNativeWebView.postMessage(JSON.stringify({ message: "your message" , data: "your data"}));
+    if(isMobile)
+    {
+      window.ReactNativeWebView.postMessage(JSON.stringify({ message: "your message" , data: "your data"}));
+    }
     setlatitude(lat);
     setlongitude(long);
     setlocated(latitude && longitude ? true : false);
@@ -310,7 +330,10 @@ function Main() {
               // await window.ReactNativeWebView.postMessage('Data from WebView / Website');
 
               // setTimeout(()=> {
-                window.ReactNativeWebView.postMessage(JSON.stringify({ message: "your message" , data: "your data"}));
+                if(isMobile)
+                {
+                  window.ReactNativeWebView.postMessage(JSON.stringify({ message: "your message" , data: "your data"}));
+                }
               // }, 2000);
 
               // await navigator.ReactNativeWebView.postMessage('Data from WebView / Website') ;
@@ -619,6 +642,7 @@ function Main() {
         {computer && nocomputer} <br />
         {printer && noprinter} <br />
         {scanner && noscanner} <br />
+        {checkexpo}
       </div>
     </div>
   );
