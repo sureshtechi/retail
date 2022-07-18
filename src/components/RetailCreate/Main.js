@@ -325,6 +325,22 @@ function Main() {
               // const registration = await navigator.serviceWorker.ready;
               // await registration.sync.register(email);
 
+              localStorage.setItem('name', JSON.stringify(name));
+              localStorage.setItem('email', JSON.stringify(email));
+              localStorage.setItem('contact_number1', JSON.stringify(contact1));
+              localStorage.setItem('contact_number2', JSON.stringify(contact2));
+              localStorage.setItem('retail_size',JSON.stringify(retailsize));
+              localStorage.setItem('it_automation', JSON.stringify(itautomation));
+              localStorage.setItem('no_of_mobile', JSON.stringify(nomobile));
+              localStorage.setItem('no_of_tab', JSON.stringify(notab));
+              localStorage.setItem('no_of_computer', JSON.stringify(nocomputer));
+              localStorage.setItem('no_of_printer', JSON.stringify(noprinter));
+              localStorage.setItem('no_of_scanner', JSON.stringify(noscanner));
+              localStorage.setItem('latitude', JSON.stringify(latitude));
+              localStorage.setItem('longitude', JSON.stringify(longitude));
+              localStorage.setItem('image', (blobimage));
+
+
               // await window.ReactNativeWebView.postMessage('Data from WebView / Website');
 
               // setTimeout(()=> {
