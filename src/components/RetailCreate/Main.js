@@ -41,18 +41,19 @@ function Main() {
   const [checkexpo, setcheckexpo] = useState("NOT LOADED");
 
   useEffect(() => {
-    if(isMobile)
-    {
-      window.ReactNativeWebView.postMessage(JSON.stringify({ message: "your message" , data: "your data"}));
-    }
+    // if(isMobile)
+    // {
+    //   window.onload = (event) => {
+    //     setcheckexpo("PAGE LOADED");
+    //   }
+    //   window.ReactNativeWebView.postMessage(JSON.stringify({ message: "your message" , data: "your data"}));
+    // }
     openDB("retail", 1, {
       upgrade(db) {
         db.createObjectStore("details", { keyPath: "email" });
       },
     });
-    window.onload = (event) => {
-      setcheckexpo("PAGE LOADED");
-    }
+    
   }, []);
 
   // useEffect( () => {
@@ -164,13 +165,14 @@ function Main() {
 
   const HandleLiveCapture = (image) => {
     
-    if(isMobile)
-    {
-      window.ReactNativeWebView.postMessage(JSON.stringify({ message: "your message" , data: "your data"}));
-    }
-    window.onload = (event) => {
-      setcheckexpo("PAGE LOADED");
-    }
+    // if(isMobile)
+    // {
+    //   window.ReactNativeWebView.postMessage(JSON.stringify({ message: "your message" , data: "your data"}));
+    //   window.onload = (event) => {
+    //     setcheckexpo("PAGE LOADED");
+    //   }
+    // }
+    
 
     setlive_capture(image);
     setimage_upload();
@@ -184,10 +186,6 @@ function Main() {
   };
 
   const getlatlog = async (lat, long) => {
-    if(isMobile)
-    {
-      window.ReactNativeWebView.postMessage(JSON.stringify({ message: "your message" , data: "your data"}));
-    }
     setlatitude(lat);
     setlongitude(long);
     setlocated(latitude && longitude ? true : false);
@@ -330,10 +328,10 @@ function Main() {
               // await window.ReactNativeWebView.postMessage('Data from WebView / Website');
 
               // setTimeout(()=> {
-                if(isMobile)
-                {
-                  window.ReactNativeWebView.postMessage(JSON.stringify({ message: "your message" , data: "your data"}));
-                }
+                // if(isMobile)
+                // {
+                //   window.ReactNativeWebView.postMessage(JSON.stringify({ message: "your message" , data: "your data"}));
+                // }
               // }, 2000);
 
               // await navigator.ReactNativeWebView.postMessage('Data from WebView / Website') ;
@@ -622,6 +620,7 @@ function Main() {
       </form>
 
       <div>
+      {/* {checkexpo} <br /> */}
         {name} <br />
         {email}
         <br />
@@ -642,7 +641,7 @@ function Main() {
         {computer && nocomputer} <br />
         {printer && noprinter} <br />
         {scanner && noscanner} <br />
-        {checkexpo}
+        
       </div>
     </div>
   );

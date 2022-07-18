@@ -20,34 +20,17 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <script>
-      if('serviceWorker' in navigator){
-    navigator.serviceWorker.register('./sw.js')
-      .then(async(reg) => {
-        console.log('service worker registered');
 
-        // reg.sync.register('SYNCDATA');
-        // console.log(" SYNC REGISTERED IN CATCH ");
-
-        // if(reg.periodicSync)
-        // {
-        //   console.log("periodicSync Sync is supported");
-        //   const status = await navigator.permissions.query({name: 'periodic-background-sync'});
-        //   if (status.state === 'granted') {
-        //   console.log("periodicSync Sync is used");
-        //   } else {
-        //   console.log("periodicSync Sync is not used");
-        //   }
-        // }
-        // else
-        // {
-        //   console.log("periodicSync Sync is NOT supported"); 
-        // }
+  //     if('serviceWorker' in navigator){
+  //   navigator.serviceWorker.register('./sw.js')
+  //     .then(async(reg) => {
+  //       console.log('service worker registered');
         
-      } 
+  //     } 
        
-      )
-      .catch(err => console.log('service worker not registered', err));
-  }
+  //     )
+  //     .catch(err => console.log('service worker not registered', err));
+  // }
     </script>
     
   </body>
