@@ -157,10 +157,10 @@ function getData(db) {
             success_count = success_count + 1;
             data_inserted = await true;
             single_idb_data = await request.result[i];
-            console.log("-----------------------------------------------");
+            
             console.log(data_inserted);
             console.log(
-              "MAIN DATAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "MAIN DATA",
               single_idb_data
             );
             console.log(single_idb_data.email);
@@ -180,35 +180,11 @@ function getData(db) {
   // const transaction1 = db.transaction(['details'],IDBTransaction.READ_WRITE);
   // const objectStore1 = transaction1.objectStore('details');
 
-  const indexeddb_data = {
-    name: "varunkumar",
-    email: "varun@gmail.com",
-    contact_number1: 9854758965,
-    contact_number2: 3256985789,
-    retail_size: 7,
-    it_automation: "automated",
-    no_of_mobile: 1000,
-    no_of_tab: 0,
-    no_of_computer: 0,
-    no_of_printer: 0,
-    no_of_scanner: 0,
-    latitude: 2.5544,
-    longitude: 5.22,
-    mysql_sync: true,
-    image: "image",
-  };
 
-  {
-    () => {
-      console.log("EMMMPPPTTTYYYYYY FFFUUUNNCCCCTTTIIIOOONNNN");
-    };
-  }
-
-  console.log("-----------------------------------------------");
+  
   console.log(data_inserted);
   if (data_inserted === false) {
     var update_retail_data = single_idb_data;
-    console.log("-----------------------------------------------");
     console.log(single_idb_data);
     console.log("EMAIL", update_retail_data.email);
     update_retail_data.mysql_sync = true;
