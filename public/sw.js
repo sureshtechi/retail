@@ -1,4 +1,3 @@
-// import { openDB } from "idb";
 const staticCacheName = "site-static-v4";
 const dynamicCacheName = "site-dynamic-v4";
 const assets = [

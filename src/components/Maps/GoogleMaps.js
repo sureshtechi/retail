@@ -27,7 +27,7 @@ const GoogleMaps = (props) => {
   };
   
     const getlocation = async() => {
-      setlocated(true);
+
       navigator.geolocation.getCurrentPosition(function(position) {
         console.log("Latitude is :", position.coords.latitude);
         console.log("Longitude is :", position.coords.longitude);
@@ -51,6 +51,7 @@ const GoogleMaps = (props) => {
     <div>
       <span className='location_btn' onClick={( () => { getlocation() } )}>Get Current Location*</span>
       <div><br></br></div>
+      
       { latitude && longitude && 
       <GoogleMap
       mapContainerStyle={mapContainerStyle}

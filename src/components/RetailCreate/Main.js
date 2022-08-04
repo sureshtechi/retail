@@ -41,19 +41,11 @@ function Main() {
   const [checkexpo, setcheckexpo] = useState("NOT LOADED");
 
   useEffect(() => {
-    // if(isMobile)
-    // {
-    //   window.onload = (event) => {
-    //     setcheckexpo("PAGE LOADED");
-    //   }
-    //   window.ReactNativeWebView.postMessage(JSON.stringify({ message: "your message" , data: "your data"}));
-    // }
     openDB("retail", 1, {
       upgrade(db) {
         db.createObjectStore("details", { keyPath: "email" });
       },
     });
-    
   }, []);
 
   // useEffect( () => {
@@ -277,8 +269,6 @@ function Main() {
             }
           )
           .then(async (response) => {
-            // const json_data =await response.json();
-            // console.log("mysql response", json_data);
             console.log(" FETCH RESPONSE " + response.status);
 
             if (response.status >= 400 && response.status <= 599) {
@@ -315,30 +305,29 @@ function Main() {
               };
               db.add("details", indexeddb_data_sync_false).then((res) => {
                 console.log(res);
-                console.log("--");
               });
               seterror(
                 "There is a Network Error, Retail Information SAVED, Data will be validated once the Network is back"
               );
               setsubmitted(true);
 
-              // const registration = await navigator.serviceWorker.ready;
-              // await registration.sync.register(email);
+              const registration = await navigator.serviceWorker.ready;
+              await registration.sync.register(email);
 
-              localStorage.setItem('name', JSON.stringify(name));
-              localStorage.setItem('email', JSON.stringify(email));
-              localStorage.setItem('contact_number1', JSON.stringify(contact1));
-              localStorage.setItem('contact_number2', JSON.stringify(contact2));
-              localStorage.setItem('retail_size',JSON.stringify(retailsize));
-              localStorage.setItem('it_automation', JSON.stringify(itautomation));
-              localStorage.setItem('no_of_mobile', JSON.stringify(nomobile));
-              localStorage.setItem('no_of_tab', JSON.stringify(notab));
-              localStorage.setItem('no_of_computer', JSON.stringify(nocomputer));
-              localStorage.setItem('no_of_printer', JSON.stringify(noprinter));
-              localStorage.setItem('no_of_scanner', JSON.stringify(noscanner));
-              localStorage.setItem('latitude', JSON.stringify(latitude));
-              localStorage.setItem('longitude', JSON.stringify(longitude));
-              localStorage.setItem('image', (blobimage));
+              // localStorage.setItem('name', JSON.stringify(name));
+              // localStorage.setItem('email', JSON.stringify(email));
+              // localStorage.setItem('contact_number1', JSON.stringify(contact1));
+              // localStorage.setItem('contact_number2', JSON.stringify(contact2));
+              // localStorage.setItem('retail_size',JSON.stringify(retailsize));
+              // localStorage.setItem('it_automation', JSON.stringify(itautomation));
+              // localStorage.setItem('no_of_mobile', JSON.stringify(nomobile));
+              // localStorage.setItem('no_of_tab', JSON.stringify(notab));
+              // localStorage.setItem('no_of_computer', JSON.stringify(nocomputer));
+              // localStorage.setItem('no_of_printer', JSON.stringify(noprinter));
+              // localStorage.setItem('no_of_scanner', JSON.stringify(noscanner));
+              // localStorage.setItem('latitude', JSON.stringify(latitude));
+              // localStorage.setItem('longitude', JSON.stringify(longitude));
+              // localStorage.setItem('image', (blobimage));
 
 
               // await window.ReactNativeWebView.postMessage('Data from WebView / Website');
@@ -384,7 +373,7 @@ function Main() {
   return (
     <div>
       <form className="getdata" onSubmit={handlesubmit}>
-        <span className="heading">Enter Retail Info here</span>
+        <span className="heading">Enter Retail Information</span>
 
         <div className="lbl_ipt">
           <label className="label">Name*</label>
@@ -593,6 +582,7 @@ function Main() {
           <br />
         </div>
         <GoogleMaps AddLatLong={getlatlog} />
+        <br/>
         <CameraModule AddLiveImage={HandleLiveCapture} />
         <div>
           {live_capture && <img src={live_capture} alt="live_capture" />}
