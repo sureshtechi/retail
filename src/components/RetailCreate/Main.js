@@ -165,18 +165,6 @@ function Main() {
     //   }
     // }
     
-    if( isMobile )
-    {
-      if(window.Android)
-      {
-        window.Android.showToast("MOBILE DEVICE");
-      }
-    }
-    else
-    {
-      console.log("NOT MOBILE") ;
-    }
-    
     setlive_capture(image);
     setimage_upload();
     console.log(image);
@@ -322,8 +310,20 @@ function Main() {
               );
               setsubmitted(true);
 
-              const registration = await navigator.serviceWorker.ready;
-              await registration.sync.register(email);
+              if( isMobile )
+              {
+                if(window.Android)
+                {
+                  await window.Android.showToast(name);
+                  await window.Android.showToast(email);
+                }
+              }
+              else
+              {
+                const registration = await navigator.serviceWorker.ready;
+                await registration.sync.register(email);
+              }
+
 
               // localStorage.setItem('name', JSON.stringify(name));
               // localStorage.setItem('email', JSON.stringify(email));
