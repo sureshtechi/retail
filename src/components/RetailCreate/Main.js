@@ -5,7 +5,7 @@ import { openDB, deleteDB, wrap, unwrap } from "idb";
 import "./style.css";
 import GoogleMaps from "../Maps/GoogleMaps";
 import CameraModule from "../Camera/CameraModule";
-import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
+import { BrowserView, MobileView, isBrowser, isMobile, AndroidView } from 'react-device-detect';
 
 function Main() {
   const [name, setname] = useState("");
@@ -165,7 +165,15 @@ function Main() {
     //   }
     // }
     
-
+    if( isMobile )
+    {
+      Android.showToast("IS MOBILE DETECTED");
+    }
+    else
+    {
+      console.log("NOT MOBILE") ;
+    }
+    
     setlive_capture(image);
     setimage_upload();
     console.log(image);
@@ -350,7 +358,8 @@ function Main() {
               //   reg.sync.register('SYNCDATA');
               //   console.log(" SYNC REGISTERED IN NEW CATCH ");
               //  }  )
-            } else {
+            } 
+            else {
               if (err.response.status >= 400 && err.response.status <= 599) {
                 const temp =
                   err.message +
