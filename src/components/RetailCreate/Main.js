@@ -167,7 +167,10 @@ function Main() {
     
     if( isMobile )
     {
-      Android.showToast("IS MOBILE DETECTED");
+      if(window.Android)
+      {
+        window.Android.showToast("MOBILE DEVICE");
+      }
     }
     else
     {
