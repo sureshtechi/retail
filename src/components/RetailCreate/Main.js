@@ -164,26 +164,17 @@ function Main() {
     //     setcheckexpo("PAGE LOADED");
     //   }
     // }
-    
-    if( isBrowser )
+
+    if(window.Android)
     {
-      alert("isBrowser");
-    }
-    if( BrowserView )
-    {
-      alert("BrowserView");
-    }
-    if( MobileView )
-    {
-      alert("MobileView"); 
-    }
-    if( isMobile )
-    {
-      alert("isMobile"); 
-    }
-    if( AndroidView )
-    {
-      alert("AndroidView");       
+      const send_to_android = {
+        name: "suresh",
+        email: "suresh@gmail.com",
+        contact_number1: 9876543211,
+        latitude: 76.555
+      };
+
+      window.Android.showToast(send_to_android);
     }
 
     
@@ -332,12 +323,10 @@ function Main() {
               );
               setsubmitted(true);
 
-              if( !isBrowser )
-              {
-                alert(" BROWSER NOT DETECTED");
+              
+                
                 if(window.Android)
                 {
-
                   const send_to_android = {
                     name: name,
                     email: email,
@@ -357,14 +346,9 @@ function Main() {
 
                   await window.Android.showToast(send_to_android);
                 }
-              }
-              else
-              {
-                alert("BROWSER DETECTED");
+              
                 const registration = await navigator.serviceWorker.ready;
                 await registration.sync.register(email);
-              }
-
 
               // localStorage.setItem('name', JSON.stringify(name));
               // localStorage.setItem('email', JSON.stringify(email));
