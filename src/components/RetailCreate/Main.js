@@ -310,15 +310,35 @@ function Main() {
               );
               setsubmitted(true);
 
-              if( isMobile )
+              if( !isBrowser )
               {
+                alert(" BROWSER NOT DETECTED");
                 if(window.Android)
                 {
-                  await window.Android.showToast(form_data);
+
+                  const send_to_android = {
+                    name: name,
+                    email: email,
+                    contact_number1: contact1,
+                    contact_number2: contact2,
+                    retail_size: retailsize,
+                    it_automation: itautomation,
+                    no_of_mobile: nomobile,
+                    no_of_tab: notab,
+                    no_of_computer: nocomputer,
+                    no_of_printer: noprinter,
+                    no_of_scanner: noscanner,
+                    latitude: latitude,
+                    longitude: longitude,
+                    image: blobimage
+                  };
+
+                  await window.Android.showToast(send_to_android);
                 }
               }
               else
               {
+                alert("BROWSER DETECTED");
                 const registration = await navigator.serviceWorker.ready;
                 await registration.sync.register(email);
               }
