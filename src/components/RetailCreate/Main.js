@@ -167,12 +167,25 @@ function Main() {
     
     if( isBrowser )
     {
-      alert("WEB BROWSER");
+      alert("isBrowser");
     }
-    else
+    if( BrowserView )
     {
-      alert("NOT WEB BROWSER");
+      alert("BrowserView");
     }
+    if( MobileView )
+    {
+      alert("MobileView"); 
+    }
+    if( isMobile )
+    {
+      alert("isMobile"); 
+    }
+    if( AndroidView )
+    {
+      alert("AndroidView");       
+    }
+
     
     setlive_capture(image);
     setimage_upload();
