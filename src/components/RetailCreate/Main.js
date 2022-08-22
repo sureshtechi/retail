@@ -167,12 +167,14 @@ function Main() {
 
     if(window.Android)
     {
-      const send_to_android = {
-        name: "suresh",
-        email: "suresh@gmail.com",
+      var obj = {
+        name: 'suresh',
+        email: 'suresh@gmail.com',
         contact_number1: 9876543211,
         latitude: 76.555
       };
+
+      var send_to_android = JSON.stringify(obj);
 
       window.Android.showToast(send_to_android);
     }
