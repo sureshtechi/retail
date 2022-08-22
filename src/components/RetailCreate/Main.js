@@ -314,8 +314,7 @@ function Main() {
               {
                 if(window.Android)
                 {
-                  await window.Android.showToast(name);
-                  await window.Android.showToast(email);
+                  await window.Android.showToast(form_data);
                 }
               }
               else
