@@ -165,20 +165,6 @@ function Main() {
     //   }
     // }
 
-    if(window.Android)
-    {
-      var obj = {
-        name: 'suresh',
-        email: 'suresh@gmail.com',
-        contact_number1: 9876543211,
-        latitude: 76.555
-      };
-
-      var send_to_android = JSON.stringify(obj);
-
-      window.Android.showToast(send_to_android);
-    }
-
     
     setlive_capture(image);
     setimage_upload();
@@ -324,12 +310,10 @@ function Main() {
                 "There is a Network Error, Retail Information SAVED, Data will be validated once the Network is back"
               );
               setsubmitted(true);
-
-              
                 
                 if(window.Android)
                 {
-                  const send_to_android = {
+                  var obj = {
                     name: name,
                     email: email,
                     contact_number1: contact1,
@@ -345,6 +329,14 @@ function Main() {
                     longitude: longitude,
                     image: blobimage
                   };
+                    // var obj = {
+                    //   name: 'suresh',
+                    //   email: 'suresh@gmail.com',
+                    //   contact_number1: 9876543211,
+                    //   latitude: 76.555
+                    // };
+
+                    var send_to_android = JSON.stringify(obj);
 
                   await window.Android.showToast(send_to_android);
                 }
