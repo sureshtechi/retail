@@ -165,6 +165,15 @@ function Main() {
     //   }
     // }
     
+    if( isBrowser )
+    {
+      alert("WEB BROWSER");
+    }
+    else
+    {
+      alert("NOT WEB BROWSER");
+    }
+    
     setlive_capture(image);
     setimage_upload();
     console.log(image);
